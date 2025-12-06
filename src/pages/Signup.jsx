@@ -25,15 +25,16 @@ function Signup() {
       // ------------------------------
       // 🔥 n8n Webhook Trigger
       // ------------------------------
-      await fetch("https://ruchitapatil.app.n8n.cloud/webhook/new-signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: user.email,
-          uid: user.uid,
-          signupTime: new Date().toISOString(),
-        }),
-      });
+     await fetch("https://ruchitapatil.app.n8n.cloud/webhook-test/new-signup", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    email: user.email,
+    uid: user.uid,
+    signupTime: new Date().toISOString(),
+  }),
+});
+
 
       // Redirect after signup
       navigate("/dashboard");
