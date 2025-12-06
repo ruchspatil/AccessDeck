@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
-import "../styles/Auth.css"; 
+import "../styles/Auth.css";
 
 function Signup() {
   const navigate = useNavigate();
@@ -14,7 +14,28 @@ function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      const user = userCredential.user;
+
+      // ------------------------------
+      // 🔥 n8n Webhook Trigger
+      // ------------------------------
+      await fetch("https://ruchitapatil.app.n8n.cloud/webhook/new-signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: user.email,
+          uid: user.uid,
+          signupTime: new Date().toISOString(),
+        }),
+      });
+
+      // Redirect after signup
       navigate("/dashboard");
     } catch (err) {
       setError("Signup failed: " + err.message);
@@ -23,7 +44,8 @@ function Signup() {
 
   return (
     <div className="login-container">
-      <h2>Sign Up</h2><br></br>
+      <h2>Sign Up</h2>
+      <br />
 
       {error && <p className="error-text">{error}</p>}
 
@@ -45,7 +67,9 @@ function Signup() {
         <button type="submit" className="auth-button">
           Create Account
         </button>
-      </form><br></br>
+      </form>
+
+      <br />
 
       <p className="auth-link">
         Already have an account? <a href="/login">Login</a>
@@ -55,3 +79,4 @@ function Signup() {
 }
 
 export default Signup;
+
