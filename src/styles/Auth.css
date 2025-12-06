@@ -1,0 +1,307 @@
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  
+   background: linear-gradient(145deg, #ffffff, #edf4fe);
+  font-family: "Inter", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  width: 100%;
+  padding: 16px 40px;
+  background: linear-gradient(90deg, #0056d6, #1e90ff);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 20 44px 60px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo {
+  font-size: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #ffea00;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #fff700;
+  transform: scale(1.05);
+}
+
+.navbar-links a {
+  color: white;
+  margin-left: 25px;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.navbar-links a:hover {
+  opacity: 0.9;
+   color: rgb(255, 251, 0);
+  text-decoration: underline;
+}
+
+/* ---------- RESPONSIVE NAVBAR ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+
+  .navbar-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-links a {
+    margin: 8px;
+  }
+}
+
+/* ---------- AUTH CONTAINERS ---------- */
+.auth-container {
+  width: 90%;
+  max-width: 800px;
+  height: 350px;
+  margin: 80px auto;
+  padding: 40px 30px;
+background: linear-gradient(90deg, #ffffff, #719bdd);
+  border-radius: 18px;
+ box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.auth-container:hover, .login-container:hover {
+  box-shadow: 0 0px 40px rgba(0,0,0,0.15);
+}
+/* ---------- sign ---------- */
+ .login-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #ffffff, #e6f0ff);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+a {
+  text-decoration: underline;  
+  color: #0c1a33;             
+  font-weight: 500;            
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: #0e0f0e;             
+}
+
+/* ---------- WELCOME TITLE ---------- */
+.welcome-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1e163e;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.welcome-title .highlight {
+  background-color: #ffea00; 
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #000; 
+}
+
+/* ---------- AUTH TITLES ---------- */
+.auth-container h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+/* ---------- INPUT ---------- */
+.auth-input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid #d0d5dd;
+  background: #f8f9fa;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+  border-color: #4f8cff;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(79, 140, 255, 0.3);
+}
+
+/* ---------- BUTTON ---------- */
+.auth-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #4f8cff, #1e6fff);
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(79, 140, 255, 0.3);
+}
+
+.auth-button:hover {
+  background: linear-gradient(90deg, #3a6fd1, #1a5ccc);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(58, 111, 209, 0.35);
+}
+
+/* ---------- LINK TEXT ---------- */
+.auth-link {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #262626;
+}
+
+.auth-link a {
+  color: #262626;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- ERROR ---------- */
+.error-text {
+  color: #ff4d4f;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+}
+
+/* ---------- DIVIDER ---------- */
+.auth-container .divider {
+  height: 1px;
+  background: #d0d5dd;
+  margin: 25px 0;
+  width: 100%;
+}
+
+.auth-container small {
+  color: #888;
+}
+
+/* ---------- DASHBOARD ---------- */
+.dashboard-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.dashboard-subtitle {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* ---------- Logout Button ---------- */
+.logout-btn {
+  padding: 12px 30px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(255,77,79,0.3);
+}
+
+.logout-btn:hover {
+  background-color: #ff7875;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,120,117,0.35);
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  margin-top: 200px;
+  padding: 25px;
+  background: linear-gradient(90deg, #2643ac, #1e2ea0);
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .auth-container, .login-container {
+    padding: 30px 20px;
+  }
+
+  .dashboard-container {
+    padding: 30px 20px;
+  }
+
+  .dashboard-title {
+    font-size: 28px;
+  }
+
+  .logout-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .footer {
+
+    font-size: 14px;
+    padding: 20px;
+  }
+}
